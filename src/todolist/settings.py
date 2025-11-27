@@ -44,6 +44,7 @@ INSTALLED_APPS = (
 )
 
 MIDDLEWARE = (
+    "todolist.metrics_middleware.MetricsMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -68,14 +69,16 @@ DB_HOST = os.environ.get("DB_HOST", "")
 
 DATABASES = {
     'default': {
-        'ENGINE': 'mysql.connector.django',
-        'NAME': DB_NAME,
-        'USER': DB_USER,
-        'PASSWORD': DB_PASSWORD,
-        'HOST': DB_HOST,  # You can use a different host if your MySQL server is on a remote machine.
-        'PORT': '',  # Leave this empty to use the default MySQL port (3306).
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'devops_todolist',
+        'USER': 'django_user',
+        'PASSWORD': '1234',
+        'HOST': '127.0.0.1',
+        'PORT': '3306',
+        'OPTIONS': {'charset': 'utf8mb4'},
     }
 }
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
