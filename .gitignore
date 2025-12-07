@@ -18,5 +18,5 @@ __pycache__/
 .DS_Store
 Thumbs.db
 
-# Optional: Data folder (Uncomment if this holds actual database files)
-# data/
+
+kube-prometheus-stack/
